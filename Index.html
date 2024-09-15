@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="timer-container">
+            <svg class="progress-ring" width="300" height="300">
+                <circle class="progress-ring__circle" stroke="currentColor" stroke-width="10" fill="transparent" r="145" cx="150" cy="150"/>
+            </svg>
+            <div class="timer">
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+        </div>
+        <div class="status">
+            <span id="statusText">Work Time</span>
+        </div>
+        <div class="controls">
+            <button id="startPauseBtn">Start</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div class="settings">
+            <div class="time-selector">
+                <label>Work Duration:</label>
+                <div class="dial" id="workDial">
+                    <button class="dial-btn" data-value="10">10</button>
+                    <button class="dial-btn" data-value="15">15</button>
+                    <button class="dial-btn" data-value="20">20</button>
+                    <button class="dial-btn" data-value="25">25</button>
+                </div>
+            </div>
+            <div class="time-selector">
+                <label>Break Duration:</label>
+                <div class="dial" id="breakDial">
+                    <button class="dial-btn" data-value="5">5</button>
+                    <button class="dial-btn" data-value="25">25</button>
+                </div>
+            </div>
+        </div>
+        <div class="pomodoro-count">
+            Pomodoros completed: <span id="pomodoroCount">0</span>
+        </div>
+        <div class="color-settings">
+            <button id="toggleTheme">Toggle Dark/Light Mode</button>
+            <label for="accentColor">Accent Color:</label>
+            <input type="color" id="accentColor" value="#4CAF50">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
