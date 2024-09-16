@@ -4,52 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="dark-mode">
     <div class="container">
-        <div class="timer-container">
-            <svg class="progress-ring" width="300" height="300">
-                <circle class="progress-ring__circle" stroke="currentColor" stroke-width="10" fill="transparent" r="145" cx="150" cy="150"/>
+        <h1>Pomodoro Timer</h1>
+
+        <!-- Timer Circle with Timer Display inside -->
+        <div class="progress-ring">
+            <svg class="progress-ring__svg">
+                <circle class="progress-ring__circle" cx="150" cy="150" r="145"></circle>
             </svg>
-            <div class="timer">
-                <span id="minutes">25</span>:<span id="seconds">00</span>
+            <div class="timer-display">
+                <span id="minutes">00</span>:<span id="seconds">00</span>
             </div>
         </div>
-        <div class="status">
-            <span id="statusText">Work Time</span>
-        </div>
+
+        <!-- Timer Controls -->
         <div class="controls">
             <button id="startPauseBtn">Start</button>
             <button id="resetBtn">Reset</button>
+            <button id="stopAlarmBtn" style="display: none;">Stop Alarm & Start Break</button>
         </div>
-        <div class="settings">
-            <div class="time-selector">
-                <label>Work Duration:</label>
-                <div class="dial" id="workDial">
-                    <button class="dial-btn" data-value="10">10</button>
-                    <button class="dial-btn" data-value="15">15</button>
-                    <button class="dial-btn" data-value="20">20</button>
-                    <button class="dial-btn" data-value="25">25</button>
-                </div>
+
+        <!-- Timer Selection Dials -->
+        <div class="dials">
+            <div id="workDial" class="dial">
+                <h2>Work Timer</h2>
+                <input type="range" id="workTimeRange" min="5" max="25" step="5" value="25">
+                <span id="workTimeValue">25 minutes</span>
             </div>
-            <div class="time-selector">
-                <label>Break Duration:</label>
-                <div class="dial" id="breakDial">
-                    <button class="dial-btn" data-value="5">5</button>
-                    <button class="dial-btn" data-value="25">25</button>
-                </div>
+            <div id="breakDial" class="dial">
+                <h2>Break Timer</h2>
+                <input type="range" id="breakTimeRange" min="5" max="25" step="20" value="5">
+                <span id="breakTimeValue">5 minutes</span>
             </div>
         </div>
-        <div class="pomodoro-count">
-            Pomodoros completed: <span id="pomodoroCount">0</span>
-        </div>
-        <div class="color-settings">
-            <button id="toggleTheme">Toggle Dark/Light Mode</button>
-            <label for="accentColor">Accent Color:</label>
-            <input type="color" id="accentColor" value="#4CAF50">
+
+        <!-- Color Palette Icon and Options -->
+        <div class="color-palette-icon" id="colorPaletteIcon">🎨</div>
+        <div class="color-options-container" id="colorOptionsContainer">
+            <div class="color-option" data-color="#4169E1" style="background-color: #4169E1;"></div>
+            <div class="color-option" data-color="#FF6347" style="background-color: #FF6347;"></div>
+            <div class="color-option" data-color="#32CD32" style="background-color: #32CD32;"></div>
+            <div class="color-option" data-color="#FFD700" style="background-color: #FFD700;"></div>
+            <div class="color-option" data-color="#8A2BE2" style="background-color: #8A2BE2;"></div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
